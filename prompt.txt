@@ -23,4 +23,4 @@ pretraining on unlabeled data, and fine-tuning for specific down-stream tasks.
 4. 与本课程的的契合度：我自我感觉并没有solid的foundation，课程每周介绍的内容对我来说都非常深奥，绝非花一周时间可以领会并实践。本project的目的也在于为我自己laid一个solid的foundation
 
 project目标：
-一步一步搭建GPT，并解释所有步骤（例如），最后我们将利用搭建的GPT模型进行分类、翻译、follow instruction等任务，我们会结合非常具体的例子，并将具体的实现毫无保留地展现给读者。（需要给出例子和example）最后会制作成网页，用链接访问，在后续的学习中不断更新（生命力）
+一步一步搭建GPT，并解释所有步骤（例如），最后我们将利用搭建的GPT模型进行分类、翻译、follow instruction等任务，我们会结合非常具体的例子，并将具体的实现毫无保留地展现给读者。（需要给出例子和example，已经搭建好了了一个github页面，以第四章为例，可以highligh gpt模型的各个参数讲解，例如context_length，blocksize等容易混淆的参数）最后会制作成网页，用链接访问，在后续的学习中不断更新（生命力）
