@@ -1,6 +1,6 @@
 <!-- 页眉设置 -->
 <div style="border-bottom: 1px solid #eaecef; padding-bottom: 0.5em; margin-bottom: 2em;">
-<h7 align="center">MDS 5110 NLP Proposal for Final Project - Guyuan XU 224040074
+<h7 align="center">MDS 5110 NLP Proposal for Final Project - Group 38: Guyuan XU 224040074
 
 </div>
 
