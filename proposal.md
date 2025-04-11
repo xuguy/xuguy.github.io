@@ -64,7 +64,7 @@ I lack a solid foundation—weekly course content feels overwhelmingly complex. 
 ## 3. Expected Outcomes  
 - Build a cpu-runnable GPT model steps by steps, exaplain very step and intuition for crusial step. 
 - Apply self-made GPT model for downstream task. (classification, translation)
-- Write a neat tutorial and put it online.
+- Write a neat tutorial and put it online: https://xuguy.github.io/ (demo)
 - **Keep updating these notes in the future after course ends**, I will add more AI related contents in the following studies.
 
 ## 8. References  
