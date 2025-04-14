@@ -35,98 +35,105 @@
               </div>
 
 
+<!-- proposal starts here -->
 
 <div style="border-bottom: 1px solid #eaecef; padding-bottom: 0.5em; margin-bottom: 2em;">
-<h7 align="center">MDS 5110 NLP Proposal for Final Project - Guyuan XU 224040074
-</h7></div>
-<h1 id="notes-on-building-a-gpt-from-sctrach">Notes on Building a GPT from sctrach </h1>
-<h2 id="1-introduction">1. Introduction </h2>
-<p>This project aims at incorporating multiple well-reiceived tutorials (ref) to help real begginers gain detailed perspective on how a large language model works. We will build a standard GPT from sctrach along with rich explanation on every step and finally use it to to do downstream task like classification, following instruction and translation on a cpu-laptop. This tutorial will be available online.</p>
-<p><strong>Highlights of tutorial structure:</strong> (<em>Figure 1.9</em> from book <a href="@ref">1</a>)</p>
-<p align="center">
- <img src="mdfig\2025-04-11-14-11-43.png" width="70%" alt="描述"> 
-</p><h2 id="2-motivation">2. Motivation </h2>
-<h3 id="with-so-many-useful-tools-and-packages-available-do-we-really-need-to-understand-their-implementation-details"><em><strong>With so many useful tools and packages available, do we really need to understand their implementation details?</strong></em> </h3>
-<p>It's important to note that I've attempted to select ​crucial implementation details​​ (e.g., text processing methods, structure of attention blocks, etc.) and explain their implementations. These details may not be exhaustive but are essential for building proper understanding. Our goal is to keep explanations ​<strong>simple yet sufficiently informative​</strong>​.</p>
-<p>This approach is particularly helpful for <strong>technical interviews you may encounter during job searches</strong>, where demonstrating understanding beyond API calls is crucial.</p>
-<h3 id="with-so-many-textbooks-available-what-makes-mine-worth-reading"><em><strong>With so many textbooks available, what makes mine worth reading?</strong></em> </h3>
-<p>In my journey of learning LLMs, I encountered numerous pitfalls in existing educational materials:</p>
-<ul>
-<li>
-<p><strong>Most textbooks fall into two extremes</strong>:</p>
-<ol>
-<li>Oversimplified content that only provides superficial understanding</li>
-<li>Excessively complex materials requiring substantial prerequisite knowledge</li>
-</ol>
-</li>
-<li>
-<p>​<strong>​Common shortcomings in "beginner-friendly" textbooks​</strong>​:</p>
-<ol>
-<li>
-<p>Omission of critical steps</p>
-<ul>
-<li>e.g., for example, what are those <code>__getitem__</code>, <code>.forward(...)</code> in code? How <code>Datasets</code> and <code>DataLoader</code> of <code>pytorch</code> works?</li>
-<li>And many classic textbooks often omit data preprocessing steps, the reader may have no idea what shape of data are feed into models.</li>
-</ul>
-</li>
-<li>
-<p>Unexplained schematic diagrams (e.g., the classic Transformer architecture diagrams often confuse beginners, what do those arrows and line mean?) You gain <strong>0</strong> knowledge from the pictures</p><p align="center"><br>
-<img src="mdfig\2025-04-11-14-27-43.png" width="30%" alt="描述"></p>
-</li>
-<li>
-<p>Implementation barriers using outdated or complex frameworks. I suppose you may not want to spend 95% of your time trying to re-build the experiment environment.</p>
-</li>
-</ol>
-</li>
-</ul>
-<p>After extensively studying four well-plaused introductory textbooks <a href="@ref">1,2,3,4</a> and several github repos <a href="@ref">5</a>, I've distilled their essence into this tutorial - genuinely demonstrating ​<strong>​every step​</strong>​ of model building and operation for absolute beginners, <em>without reservations</em>."</p>
-<h3 id="why-deviate-from-given-directions-to-create-a-standalone-project-whats-its-value"><em><strong>​Why deviate from given directions to create a standalone project? What's its value?​</strong>​</em> </h3>
-   <!-- *(Alignment with course objectives, GitHub-driven vitality, suitability for true beginners while avoiding time sinks in trivial details)*   -->
-<p>Because I can't find a topic that fits mine:</p>
-<ul>
-<li>
-<p>Close to ​<strong>TOPIC 10: A SURVEY FOR A SPECIFIC TOPIC​</strong>​ (GPT implementation focus) but documents textbook-derived lessons:</p>
-<blockquote>
-<p><em>Writing a survey paper involves a systematic review of relevant literature, critical analysis of methodologies and findings, and clear presentation of information accessible and insightful for researchers and practitioners.</em></p>
-</blockquote>
-<ul>
-<li>But here I review serveral materials I used for learning, my target is to clearly present all their benefits: some explain the model structure in great details, some present valuable intuition, some draw good pictures, etc.</li>
-</ul>
-</li>
-<li>
-<p>Shares goals with ​<strong>TOPIC 4: DATASET BUILDING​</strong>​:</p>
-<ul>
-<li><strong>Aim to create lasting value for the beginners come after</strong> (student of next term for example) rather than producing disposable coursework you and others might never see/use it again.</li>
-</ul>
-</li>
-<li>
-<p>​Alignment with course objectives:​<br>
-I lack a solid foundation—weekly course content feels overwhelmingly complex. This project serves to lay a solid foundation for myself.</p>
-</li>
-</ul>
-<hr>
-<h2 id="3-expected-outcomes">3. Expected Outcomes </h2>
-<ul>
-<li>Build a cpu-runnable GPT model steps by steps, exaplain very step and intuition for crusial step.</li>
-<li>Apply self-made GPT model for downstream task. (classification, translation)</li>
-<li>Write a neat tutorial and put it online.</li>
-<li><strong>Keep updating these notes in the future after course ends</strong>, I will add more AI related contents in the following studies.</li>
-</ul>
-<h2 id="8-references">8. References </h2>
-<p><a href="@ref">1</a>: Raschka S. (2024). <em>Build a Large Language Model (From Scratch)</em><br>
-<a href="@ref">2</a>: Koki Saitoh. (2016). <em>Deep Learning from the Basics: Python and Deep Learning: Theory and Implementation</em><br>
-<a href="@ref">3</a>: 《深度学习入门2：自制框架》- 斋藤康毅；Koki Saitoh. (2020). <em>Deep Learning from Scratch 1</em><br>
-<a href="@ref">4</a>: 《数度学习进阶：自然语言处理》- 斋藤康毅；Koki Saitoh. (2018). <em>Deep Learning from Scratch 2: Natural Language Processing</em><br>
-<a href="@ref">5</a>: BabyGPT-Build_GPT_From_Scratch <a href="https://github.com/TatevKaren/BabyGPT-Build_GPT_From_Scratch">https://github.com/TatevKaren/BabyGPT-Build_GPT_From_Scratch</a></p>
-
-      </div>
+      <h7 align="center">MDS 5110 NLP Proposal for Final Project - Group 38: Guyuan XU 224040074
+      </h7></div>
+      <h1 id="notes-on-building-a-gpt-from-sctrach">Notes on Building a GPT from sctrach </h1>
+      <h2 id="1-introduction">1. Introduction </h2>
+      <p>This project aims at incorporating multiple well-reiceived tutorials (ref) to help real begginers gain detailed perspective on how a large language model works. We will build a standard GPT from sctrach along with rich explanation on every step and finally use it to to do downstream task like classification, following instruction and translation on a cpu-laptop. This tutorial will be available online.</p>
+      <p><strong>Highlights of tutorial structure:</strong> (<em>Figure 1.9</em> from book <a href="@ref">1</a>)</p>
+      <p align="center">
+       <img src="mdfig\2025-04-11-14-11-43.png" width="70%" alt="描述"> 
+      </p><h2 id="2-motivation">2. Motivation </h2>
+      <h3 id="with-so-many-useful-tools-and-packages-available-do-we-really-need-to-understand-their-implementation-details"><em><strong>With so many useful tools and packages available, do we really need to understand their implementation details?</strong></em> </h3>
+      <p>It's important to note that I've attempted to select ​crucial implementation details​​ (e.g., text processing methods, structure of attention blocks, etc.) and explain their implementations. These details may not be exhaustive but are essential for building proper understanding. Our goal is to keep explanations ​<strong>simple yet sufficiently informative​</strong>​.</p>
+      <p>This approach is particularly helpful for <strong>technical interviews you may encounter during job searches</strong>, where demonstrating understanding beyond API calls is crucial.</p>
+      <h3 id="with-so-many-textbooks-available-what-makes-mine-worth-reading"><em><strong>With so many textbooks available, what makes mine worth reading?</strong></em> </h3>
+      <p>In my journey of learning LLMs, I encountered numerous pitfalls in existing educational materials:</p>
+      <ul>
+      <li>
+      <p><strong>Most textbooks fall into two extremes</strong>:</p>
+      <ol>
+      <li>Oversimplified content that only provides superficial understanding</li>
+      <li>Excessively complex materials requiring substantial prerequisite knowledge</li>
+      </ol>
+      </li>
+      <li>
+      <p>​<strong>​Common shortcomings in "beginner-friendly" textbooks​</strong>​:</p>
+      <ol>
+      <li>
+      <p>Omission of critical steps</p>
+      <ul>
+      <li>e.g., for example, what are those <code>__getitem__</code>, <code>.forward(...)</code> in code? How <code>Datasets</code> and <code>DataLoader</code> of <code>pytorch</code> works?</li>
+      <li>And many classic textbooks often omit data preprocessing steps, the reader may have no idea what shape of data are feed into models.</li>
+      </ul>
+      </li>
+      <li>
+      <p>Unexplained schematic diagrams (e.g., the classic Transformer architecture diagrams often confuse beginners, what do those arrows and line mean?) You gain <strong>0</strong> knowledge from the pictures</p><p align="center"><br>
+      <img src="mdfig\2025-04-11-14-27-43.png" width="30%" alt="描述"></p>
+      </li>
+      <li>
+      <p>Implementation barriers using outdated or complex frameworks. I suppose you may not want to spend 95% of your time trying to re-build the experiment environment.</p>
+      </li>
+      </ol>
+      </li>
+      </ul>
+      <p>After extensively studying four well-plaused introductory textbooks <a href="@ref">1,2,3,4</a> and several github repos <a href="@ref">5</a>, I've distilled their essence into this tutorial - genuinely demonstrating ​<strong>​every step​</strong>​ of model building and operation for absolute beginners, <em>without reservations</em>."</p>
+      <p>Besides, an important part of this tutorial is to introduce "<strong>Best Practices</strong>" that are likely to be neglected. For example:</p>
+      <ul>
+      <li>Dealing with downloading: 1) Avoiding duplicate download by  detetecting existed <code>data</code> file; 2) Retrying network connection/Constraining connection time</li>
+      <li>Dealing with hyper-parameters: use <code>config</code> to manage hyperparameters</li>
+      <li>Dealing with Errors: 1) Tensors in different devices; 2)CUDA out of mememorys</li>
+      </ul>
+      <h3 id="why-deviate-from-given-directions-to-create-a-standalone-project-whats-its-value"><em><strong>​Why deviate from given directions to create a standalone project? What's its value?​</strong>​</em> </h3>
+         <!-- *(Alignment with course objectives, GitHub-driven vitality, suitability for true beginners while avoiding time sinks in trivial details)*   -->
+      <p>Because I can't find a topic that fits mine:</p>
+      <ul>
+      <li>
+      <p>Close to ​<strong>TOPIC 10: A SURVEY FOR A SPECIFIC TOPIC​</strong>​ (GPT implementation focus) but documents textbook-derived lessons:</p>
+      <blockquote>
+      <p><em>Writing a survey paper involves a systematic review of relevant literature, critical analysis of methodologies and findings, and clear presentation of information accessible and insightful for researchers and practitioners.</em></p>
+      </blockquote>
+      <ul>
+      <li>But here I review serveral materials I used for learning, my target is to clearly present all their benefits: some explain the model structure in great details, some present valuable intuition, some draw good pictures, etc.</li>
+      </ul>
+      </li>
+      <li>
+      <p>Shares goals with ​<strong>TOPIC 4: DATASET BUILDING​</strong>​:</p>
+      <ul>
+      <li><strong>Aim to create lasting value for the beginners come after</strong> (student of next term for example) rather than producing disposable coursework you and others might never see/use it again.</li>
+      </ul>
+      </li>
+      <li>
+      <p>​Alignment with course objectives:​<br>
+      I lack a solid foundation—weekly course content feels overwhelmingly complex. This project serves to lay a solid foundation for myself.</p>
+      </li>
+      </ul>
+      <hr>
+      <h2 id="3-expected-outcomes">3. Expected Outcomes </h2>
+      <ul>
+      <li>Build a cpu-runnable GPT model steps by steps, exaplain very step and intuition for crusial step.</li>
+      <li>Apply self-made GPT model for downstream task. (classification, translation)</li>
+      <li>Write a neat tutorial and put it online: <a href="https://xuguy.github.io/">https://xuguy.github.io/</a> (demo)</li>
+      <li><strong>Keep updating these notes in the future after course ends</strong>, I will add more AI related contents in the following studies.</li>
+      </ul>
+      <h2 id="8-references">8. References </h2>
+      <p><a href="@ref">1</a>: Raschka S. (2024). <em>Build a Large Language Model (From Scratch)</em><br>
+      <a href="@ref">2</a>: Koki Saitoh. (2016). <em>Deep Learning from the Basics: Python and Deep Learning: Theory and Implementation</em><br>
+      <a href="@ref">3</a>: 《深度学习入门2：自制框架》- 斋藤康毅；Koki Saitoh. (2020). <em>Deep Learning from Scratch 1</em><br>
+      <a href="@ref">4</a>: 《数度学习进阶：自然语言处理》- 斋藤康毅；Koki Saitoh. (2018). <em>Deep Learning from Scratch 2: Natural Language Processing</em><br>
+      <a href="@ref">5</a>: BabyGPT-Build_GPT_From_Scratch <a href="https://github.com/TatevKaren/BabyGPT-Build_GPT_From_Scratch">https://github.com/TatevKaren/BabyGPT-Build_GPT_From_Scratch</a></p>
       
-      
-    
-    
-    
-    
-    
-    
-  
-    </body></html>
+            </div>
+            
+            
+          
+          
+          
+          
+          
+          
+        
+          </body></html>

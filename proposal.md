@@ -43,6 +43,12 @@ In my journey of learning LLMs, I encountered numerous pitfalls in existing educ
 
 After extensively studying four well-plaused introductory textbooks [1,2,3,4](@ref) and several github repos [5](@ref), I've distilled their essence into this tutorial - genuinely demonstrating ​**​every step​**​ of model building and operation for absolute beginners, *without reservations*."
 
+Besides, an important part of this tutorial is to introduce "**Best Practices**" that are likely to be neglected. For example:
+
+- Dealing with downloading: 1) Avoiding duplicate download by  detetecting existed `data` file; 2) Retrying network connection/Constraining connection time
+- Dealing with hyper-parameters: use `config` to manage hyperparameters
+- Dealing with Errors: 1) Tensors in different devices; 2)CUDA out of mememorys
+
 
 ### ***​Why deviate from given directions to create a standalone project? What's its value?​**​*
    <!-- *(Alignment with course objectives, GitHub-driven vitality, suitability for true beginners while avoiding time sinks in trivial details)*   -->
