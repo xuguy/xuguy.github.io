@@ -79,3 +79,4 @@ I lack a solid foundation—weekly course content feels overwhelmingly complex. 
 [3](@ref): 《深度学习入门2：自制框架》- 斋藤康毅；Koki Saitoh. (2020). *Deep Learning from Scratch 1* 
 [4](@ref): 《数度学习进阶：自然语言处理》- 斋藤康毅；Koki Saitoh. (2018). *Deep Learning from Scratch 2: Natural Language Processing* 
 [5](@ref): BabyGPT-Build_GPT_From_Scratch https://github.com/TatevKaren/BabyGPT-Build_GPT_From_Scratch
+[6](@ref): Bret Slatkin. (2016) Effective Python: 90 Specific Ways to Write Better Python(2nd Edition)
