@@ -45,7 +45,7 @@ After extensively studying four well-plaused introductory textbooks [1,2,3,4](@r
 
 Besides, an important part of this tutorial is to introduce "**Best Practices**" that are likely to be neglected. For example:
 
-- Dealing with downloading: 1) Avoiding duplicate download by  detetecting existed `data` file; 2) Retrying network connection/Constraining connection time
+- Dealing with downloading: 1) Avoiding duplicate download by detetecting existed `data` file; 2) Retrying network connection/Constraining connection time
 - Dealing with hyper-parameters: use `config` to manage hyperparameters
 - Dealing with Errors: 1) Tensors in different devices; 2)CUDA out of mememorys
 
