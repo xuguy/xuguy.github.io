@@ -4,10 +4,14 @@
 
 </div>
 
-# Notes on Building a GPT from sctrach
+<!-- # Notes on Building a GPT from sctrach -->
 
 ## 1. Introduction  
-This project aims at incorporating multiple well-reiceived tutorials (ref) to help real begginers gain detailed perspective on how a large language model works. We will build a standard GPT from sctrach along with rich explanation on every step and finally use it to to do downstream task like classification, following instruction and translation on a cpu-laptop. This tutorial will be available online.
+This project aims at incorporating *MDS5110 (our NLP course)* and multiple well-reiceived tutorials ([1,2,3,4,5,6](@ref)) to help begginers gain detailed perspective on LLM as well as practical skills (coding). 
+
+We will first build a standard GPT from sctrach along with rich explanation on every step and then use it to to do downstream task like classification, following instruction and translation on a cpu-laptop, finally scale-up to billion-parameter LLM with multi-GPU backend. 
+
+This tutorial will be available online.
 
 **Highlights of tutorial structure:** (*Figure 1.9* from book [1](@ref))
 <p align="center">
@@ -70,6 +74,7 @@ I lack a solid foundation—weekly course content feels overwhelmingly complex. 
 ## 3. Expected Outcomes  
 - Build a cpu-runnable GPT model steps by steps, exaplain very step and intuition for crusial step. 
 - Apply self-made GPT model for downstream task. (classification, translation)
+- Learn how to scale up to real Large Language Model
 - Write a neat tutorial and put it online: https://xuguy.github.io/ (demo)
 - **Keep updating these notes in the future after course ends**, I will add more AI related contents in the following studies.
 
