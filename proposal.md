@@ -7,7 +7,7 @@
 <!-- # Notes on Building a GPT from sctrach -->
 
 ## 1. Introduction  
-This project aims at incorporating *MDS5110 (our NLP course)* and multiple well-reiceived tutorials to help begginers gain detailed perspective on LLM as well as practical skills (coding). 
+This project aims at incorporating *MDS5110 (our NLP course)* and several well-reiceived tutorials to help begginers gain detailed perspective on LLM as well as practical skills (coding). 
 
 We will first build a standard GPT from sctrach along with rich explanation on every step and then use it to to do downstream task like classification, following instruction and translation on a cpu-laptop, finally scale-up to billion-parameter LLM with multi-GPU backend. 
 
