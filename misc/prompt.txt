@@ -44,3 +44,24 @@ project目标：
 - `eval_iters`: The number of iterations over which to average the evaluation loss
 - `h`: The number of attention heads in the multi-head attention mechanism
 - `dropout_rate`: The dropout rate used during training to prevent overfitting
+
+
+Our project aims at composing a tutorial, which comprehensively cover the entire process of building a LLM: including dealing with text data, model (mainly decoder-only gpt) architecture, teaching model to finish downstream task through fine-tunning, etc.
+
+This project does not belong to any of the provided topics, but was inspired by Topic 4: building dataset, what different is that we help other buildup or enhance their knowledge base.
+
+The motivation comes from this course, specificlly my learning path of this course: I think this course is more about introduction to content of LLM, mainly for conceptual based, but did not dive too much into the details, so there is a gap between concept and actual, i have to self-learn alot about the specific structure of the model and how to do training, although course tutorial helps a lot, but still have a large gap to fill. So i 
+
+
+In my experience, purely conceptual understanding fails to yield actual output. Without a structured knowledge framework for large language models (LLMs), I found myself unable to apply theories to practical work—making even feeling so hard in basic assignments.
+
+To bridge these critical gaps, I thoroughly studied five highly-regarded beginner-focused guides. These resources not only filled foundational insufficiency but also expanded my comprehension of LLM architectures. This journey inspired me to compile my learnings into a comprehensive and in-depth tutorial covering all facets of modern large models, with a dedicated focus on hands-on code implementation.
+
+
+
+在我看来，但从概念上理解是没有办法获得深度的认知的，并且对于我这种没有对大语言模型建立知识体系的人，我无法利用从课上学到的东西去做什么实际的工作，甚至连作业也寸步难行。
+
+所以我从头到尾读了5本相关的教程，这些教程都是广受好评的面向新手的教程，这些教程帮助我填补了空缺，并且极大的加深了我对大语言模型的理解。因此，我决定将我学到的东西整理成这一份覆盖了大模型各个方面的全面而详尽的教程，重点是实际的代码编写。
+
+
+
