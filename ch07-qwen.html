@@ -7511,16 +7511,53 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="Fine-Tune-Quantized-Qwen/Qwen2.5-3B-Instruct-With-LoRA-for-legal-questions-answering">Fine Tune Quantized <code>Qwen/Qwen2.5-3B-Instruct</code> With LoRA for legal questions answering<a class="anchor-link" href="#Fine-Tune-Quantized-Qwen/Qwen2.5-3B-Instruct-With-LoRA-for-legal-questions-answering">¶</a></h1><p><span style="background-color: #007bff; color: white; padding: 2px 5px; border-radius: 3px;">This chapter was incorporated from HW3 of NLP 2025, it is a bit complicated and I still didn't finish this part, will update a new version for better viewing.</span></p>
 <p>In this part, we did not use <code>LLaMA Factory</code>, but attempt to fine tune model manually.</p>
-<h3 id="1.-Load-and-process-the-dataset">1. Load and process the dataset<a class="anchor-link" href="#1.-Load-and-process-the-dataset">¶</a></h3><p>The <a href="https://huggingface.co/datasets/ShengbinYue/DISC-Law-SFT">DISC-Law-SFT</a> claims to have 403K entries of data, but in fact, there are only ~286K available for download, they are:
-| Dataset                  | Task/Source                          | Size  |
-|--------------------------|--------------------------------------|-------|
-| DISC-Law-SFT-Pair        | Legal information extraction         | 32K   |
-|                          | Legal event detection                | 27K   |
-|                          | Legal case classification            | 20K   |
-|                          | ...                                  | ...   |
-| DISC-Law-SFT-Triple      | Legal judgment prediction            | 16K   |
-|                          | Legal question answering             | 23K   |
-| <strong>Total</strong>                |                                      | <strong>285.7K</strong> |</p>
+<h3 id="1.-Load-and-process-the-dataset">1. Load and process the dataset<a class="anchor-link" href="#1.-Load-and-process-the-dataset">¶</a></h3><p>The <a href="https://huggingface.co/datasets/ShengbinYue/DISC-Law-SFT">DISC-Law-SFT</a> claims to have 403K entries of data, but in fact, there are only ~286K available for download, they are:</p>
+<table>
+<thead>
+<tr>
+<th>Dataset</th>
+<th>Task/Source</th>
+<th>Size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DISC-Law-SFT-Pair</td>
+<td>Legal information extraction</td>
+<td>32K</td>
+</tr>
+<tr>
+<td></td>
+<td>Legal event detection</td>
+<td>27K</td>
+</tr>
+<tr>
+<td></td>
+<td>Legal case classification</td>
+<td>20K</td>
+</tr>
+<tr>
+<td></td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<td>DISC-Law-SFT-Triple</td>
+<td>Legal judgment prediction</td>
+<td>16K</td>
+</tr>
+<tr>
+<td></td>
+<td>Legal question answering</td>
+<td>23K</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>285.7K</strong></td>
+</tr>
+</tbody>
+</table>
 <p>This dataset is messy, names are inconsistent, for example
 each <code>Task/Source</code> has a unique id, for example, <code>'legal_question_answering_1'</code> correspond to the 1st data of *<strong>legal question answering task</strong><em>, but <code>'jud_read_compre-1'</code> is the first element of </em><strong>Judicial examination</strong>*
 And <code>DISC-Law-SFT-Pair</code> has different structure from</p>
@@ -7875,9 +7912,9 @@ pylibcugraph-cu12 24.12.0 requires rmm-cu12==24.12.*, but you have rmm-cu12 25.2
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jupyter-widgets jp-OutputArea-output" id="decb48f3-e1e7-421d-abcb-e80ae81f616f" tabindex="0">
+<div class="jupyter-widgets jp-OutputArea-output" id="c469929c-9f14-475f-a8dd-824545c66a79" tabindex="0">
 <script type="text/javascript">
-var element = document.getElementById('decb48f3-e1e7-421d-abcb-e80ae81f616f');
+var element = document.getElementById('c469929c-9f14-475f-a8dd-824545c66a79');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "18f16ee5fcd34e9ba0e0360744f9688b", "version_major": 2, "version_minor": 0}
@@ -7896,9 +7933,9 @@ E0000 00:00:1745161493.554984      19 cuda_blas.cc:1418] Unable to register cuBL
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jupyter-widgets jp-OutputArea-output" id="eb140e50-5d7d-4103-b98c-f7b0f8be48d0" tabindex="0">
+<div class="jupyter-widgets jp-OutputArea-output" id="9c056d88-f2bb-4c7b-8313-230ef62cf3d1" tabindex="0">
 <script type="text/javascript">
-var element = document.getElementById('eb140e50-5d7d-4103-b98c-f7b0f8be48d0');
+var element = document.getElementById('9c056d88-f2bb-4c7b-8313-230ef62cf3d1');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "79c63d2ac0934b7192c52b8edbcb25fd", "version_major": 2, "version_minor": 0}
@@ -7907,9 +7944,9 @@ var element = document.getElementById('eb140e50-5d7d-4103-b98c-f7b0f8be48d0');
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jupyter-widgets jp-OutputArea-output" id="0df16588-f9ac-43fa-8183-1468fb2d225a" tabindex="0">
+<div class="jupyter-widgets jp-OutputArea-output" id="de366eac-2ccd-4e79-b597-11618745f93f" tabindex="0">
 <script type="text/javascript">
-var element = document.getElementById('0df16588-f9ac-43fa-8183-1468fb2d225a');
+var element = document.getElementById('de366eac-2ccd-4e79-b597-11618745f93f');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "47e8aff157d04ef399e2cbf868677378", "version_major": 2, "version_minor": 0}
@@ -7918,9 +7955,9 @@ var element = document.getElementById('0df16588-f9ac-43fa-8183-1468fb2d225a');
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jupyter-widgets jp-OutputArea-output" id="276a2da4-26ed-4a9a-a652-362dd247b8e8" tabindex="0">
+<div class="jupyter-widgets jp-OutputArea-output" id="d4c5ad33-5157-47d3-8b5e-91549fee56d5" tabindex="0">
 <script type="text/javascript">
-var element = document.getElementById('276a2da4-26ed-4a9a-a652-362dd247b8e8');
+var element = document.getElementById('d4c5ad33-5157-47d3-8b5e-91549fee56d5');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "ff7981d95ad1499ab55be1f60d494269", "version_major": 2, "version_minor": 0}
@@ -7929,9 +7966,9 @@ var element = document.getElementById('276a2da4-26ed-4a9a-a652-362dd247b8e8');
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jupyter-widgets jp-OutputArea-output" id="96e864d6-1fb0-4d71-bf58-c8ca5d4b7c56" tabindex="0">
+<div class="jupyter-widgets jp-OutputArea-output" id="cf8cbb6b-1ccd-4efc-8aab-7fb7ec7f4a31" tabindex="0">
 <script type="text/javascript">
-var element = document.getElementById('96e864d6-1fb0-4d71-bf58-c8ca5d4b7c56');
+var element = document.getElementById('cf8cbb6b-1ccd-4efc-8aab-7fb7ec7f4a31');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "cc6d0e74da304f93a4b870b26144d9ff", "version_major": 2, "version_minor": 0}
@@ -7947,9 +7984,9 @@ var element = document.getElementById('96e864d6-1fb0-4d71-bf58-c8ca5d4b7c56');
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jupyter-widgets jp-OutputArea-output" id="a773afa4-511e-44e5-b18a-24ce7571c5f2" tabindex="0">
+<div class="jupyter-widgets jp-OutputArea-output" id="a31ddef5-1f13-476c-a017-da8ed34b7f24" tabindex="0">
 <script type="text/javascript">
-var element = document.getElementById('a773afa4-511e-44e5-b18a-24ce7571c5f2');
+var element = document.getElementById('a31ddef5-1f13-476c-a017-da8ed34b7f24');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "750040edc31b4a8d800ade884f1d85d7", "version_major": 2, "version_minor": 0}
@@ -7958,9 +7995,9 @@ var element = document.getElementById('a773afa4-511e-44e5-b18a-24ce7571c5f2');
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jupyter-widgets jp-OutputArea-output" id="edb12025-1635-49a3-aaf0-8775f75fbe45" tabindex="0">
+<div class="jupyter-widgets jp-OutputArea-output" id="66130e36-e961-4971-880d-6217e95f2975" tabindex="0">
 <script type="text/javascript">
-var element = document.getElementById('edb12025-1635-49a3-aaf0-8775f75fbe45');
+var element = document.getElementById('66130e36-e961-4971-880d-6217e95f2975');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "aa50815c3cf846e697fdca6b455eb073", "version_major": 2, "version_minor": 0}
@@ -7969,9 +8006,9 @@ var element = document.getElementById('edb12025-1635-49a3-aaf0-8775f75fbe45');
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jupyter-widgets jp-OutputArea-output" id="a2aaed33-84c8-4f48-b7e7-9bfadb600837" tabindex="0">
+<div class="jupyter-widgets jp-OutputArea-output" id="f4650ff3-7efc-459b-bc7c-6cc46a27bc53" tabindex="0">
 <script type="text/javascript">
-var element = document.getElementById('a2aaed33-84c8-4f48-b7e7-9bfadb600837');
+var element = document.getElementById('f4650ff3-7efc-459b-bc7c-6cc46a27bc53');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "dee3344ba13d4a9f953e24d8c0332124", "version_major": 2, "version_minor": 0}
@@ -7980,9 +8017,9 @@ var element = document.getElementById('a2aaed33-84c8-4f48-b7e7-9bfadb600837');
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jupyter-widgets jp-OutputArea-output" id="65198cb1-8bd2-4619-bd41-0af4dbe816b3" tabindex="0">
+<div class="jupyter-widgets jp-OutputArea-output" id="eb04943c-2021-4063-a1a0-e995ee12d747" tabindex="0">
 <script type="text/javascript">
-var element = document.getElementById('65198cb1-8bd2-4619-bd41-0af4dbe816b3');
+var element = document.getElementById('eb04943c-2021-4063-a1a0-e995ee12d747');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "0844d2f722f54affbb373ed048ddb4ff", "version_major": 2, "version_minor": 0}
@@ -7991,9 +8028,9 @@ var element = document.getElementById('65198cb1-8bd2-4619-bd41-0af4dbe816b3');
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jupyter-widgets jp-OutputArea-output" id="f210bba0-a959-4d00-a4a2-07d9b71744a6" tabindex="0">
+<div class="jupyter-widgets jp-OutputArea-output" id="56b379d6-a516-406b-b6e4-c00dca07982c" tabindex="0">
 <script type="text/javascript">
-var element = document.getElementById('f210bba0-a959-4d00-a4a2-07d9b71744a6');
+var element = document.getElementById('56b379d6-a516-406b-b6e4-c00dca07982c');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "bf369a3b83aa4ed8b01c330c66332fab", "version_major": 2, "version_minor": 0}
@@ -8002,9 +8039,9 @@ var element = document.getElementById('f210bba0-a959-4d00-a4a2-07d9b71744a6');
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jupyter-widgets jp-OutputArea-output" id="8e707c90-a61a-4402-a92e-529b1530d2d8" tabindex="0">
+<div class="jupyter-widgets jp-OutputArea-output" id="069c242b-057a-4370-b5d7-a5be8b2e3b81" tabindex="0">
 <script type="text/javascript">
-var element = document.getElementById('8e707c90-a61a-4402-a92e-529b1530d2d8');
+var element = document.getElementById('069c242b-057a-4370-b5d7-a5be8b2e3b81');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "b152230bc8ca4238b33dd1f328112ebd", "version_major": 2, "version_minor": 0}
@@ -8213,9 +8250,9 @@ response:
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jupyter-widgets jp-OutputArea-output" id="0cf0fd58-ed8c-4ee5-a4c3-293912caa54e" tabindex="0">
+<div class="jupyter-widgets jp-OutputArea-output" id="3b022365-0ec7-47fb-80a0-fac9ecbcd0ca" tabindex="0">
 <script type="text/javascript">
-var element = document.getElementById('0cf0fd58-ed8c-4ee5-a4c3-293912caa54e');
+var element = document.getElementById('3b022365-0ec7-47fb-80a0-fac9ecbcd0ca');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "0d9d613e2ef741ff8af2775ab7ada35d", "version_major": 2, "version_minor": 0}
@@ -8224,9 +8261,9 @@ var element = document.getElementById('0cf0fd58-ed8c-4ee5-a4c3-293912caa54e');
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jupyter-widgets jp-OutputArea-output" id="13007e11-1ae5-40b7-adef-35aa3f9c2ccc" tabindex="0">
+<div class="jupyter-widgets jp-OutputArea-output" id="14a1e4f5-e476-475c-96db-b4125cea8540" tabindex="0">
 <script type="text/javascript">
-var element = document.getElementById('13007e11-1ae5-40b7-adef-35aa3f9c2ccc');
+var element = document.getElementById('14a1e4f5-e476-475c-96db-b4125cea8540');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "187ef18219414dad816ba5ea29c6cb87", "version_major": 2, "version_minor": 0}
@@ -8235,9 +8272,9 @@ var element = document.getElementById('13007e11-1ae5-40b7-adef-35aa3f9c2ccc');
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jupyter-widgets jp-OutputArea-output" id="231beb5f-5b54-4492-8614-0d8bfa75cc1b" tabindex="0">
+<div class="jupyter-widgets jp-OutputArea-output" id="bc6f68ff-fd73-4d8d-9d08-06cb59724dce" tabindex="0">
 <script type="text/javascript">
-var element = document.getElementById('231beb5f-5b54-4492-8614-0d8bfa75cc1b');
+var element = document.getElementById('bc6f68ff-fd73-4d8d-9d08-06cb59724dce');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "e34d60981b384ee28324c4a3fa63c490", "version_major": 2, "version_minor": 0}
@@ -8246,9 +8283,9 @@ var element = document.getElementById('231beb5f-5b54-4492-8614-0d8bfa75cc1b');
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jupyter-widgets jp-OutputArea-output" id="1290e668-9d09-40c2-ae66-9efbeb7b9219" tabindex="0">
+<div class="jupyter-widgets jp-OutputArea-output" id="cf8440ec-5046-4e8e-b7af-cc8a9b397638" tabindex="0">
 <script type="text/javascript">
-var element = document.getElementById('1290e668-9d09-40c2-ae66-9efbeb7b9219');
+var element = document.getElementById('cf8440ec-5046-4e8e-b7af-cc8a9b397638');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "cdd666621acf4e5ca0f34a0cd1418fad", "version_major": 2, "version_minor": 0}
@@ -8286,9 +8323,9 @@ var element = document.getElementById('1290e668-9d09-40c2-ae66-9efbeb7b9219');
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jupyter-widgets jp-OutputArea-output" id="43a5c087-030c-4ee5-acb8-e01d8b66f1b3" tabindex="0">
+<div class="jupyter-widgets jp-OutputArea-output" id="7816a598-298d-4a88-a822-7a531b8b633a" tabindex="0">
 <script type="text/javascript">
-var element = document.getElementById('43a5c087-030c-4ee5-acb8-e01d8b66f1b3');
+var element = document.getElementById('7816a598-298d-4a88-a822-7a531b8b633a');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "5d86412507af45f096c4308c8c89a37f", "version_major": 2, "version_minor": 0}
@@ -8369,9 +8406,9 @@ var element = document.getElementById('43a5c087-030c-4ee5-acb8-e01d8b66f1b3');
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jupyter-widgets jp-OutputArea-output" id="fcffa567-4256-4c1b-9e62-8ce89ffb55df" tabindex="0">
+<div class="jupyter-widgets jp-OutputArea-output" id="ab688578-ea6b-41a7-9137-1c6620a718ca" tabindex="0">
 <script type="text/javascript">
-var element = document.getElementById('fcffa567-4256-4c1b-9e62-8ce89ffb55df');
+var element = document.getElementById('ab688578-ea6b-41a7-9137-1c6620a718ca');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "31ca96c43cd7437489fe6cdcfe61261c", "version_major": 2, "version_minor": 0}
@@ -8380,9 +8417,9 @@ var element = document.getElementById('fcffa567-4256-4c1b-9e62-8ce89ffb55df');
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jupyter-widgets jp-OutputArea-output" id="aba91f26-1dbb-45eb-9a45-801367965e4c" tabindex="0">
+<div class="jupyter-widgets jp-OutputArea-output" id="bdacf2b0-76c8-419f-8b5f-eca6fb341e91" tabindex="0">
 <script type="text/javascript">
-var element = document.getElementById('aba91f26-1dbb-45eb-9a45-801367965e4c');
+var element = document.getElementById('bdacf2b0-76c8-419f-8b5f-eca6fb341e91');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "ec2a308ffc174fbb9e53be28f9d02f79", "version_major": 2, "version_minor": 0}
@@ -8391,9 +8428,9 @@ var element = document.getElementById('aba91f26-1dbb-45eb-9a45-801367965e4c');
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jupyter-widgets jp-OutputArea-output" id="df043c01-57cb-4983-a8bc-e1f6adc650c0" tabindex="0">
+<div class="jupyter-widgets jp-OutputArea-output" id="0587737c-0a43-4b1d-a666-ab8153a2c165" tabindex="0">
 <script type="text/javascript">
-var element = document.getElementById('df043c01-57cb-4983-a8bc-e1f6adc650c0');
+var element = document.getElementById('0587737c-0a43-4b1d-a666-ab8153a2c165');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "95cc865b644a466481efed2eb13cceca", "version_major": 2, "version_minor": 0}
@@ -8402,9 +8439,9 @@ var element = document.getElementById('df043c01-57cb-4983-a8bc-e1f6adc650c0');
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jupyter-widgets jp-OutputArea-output" id="5ad00338-a63a-4ad6-97ad-f913d9e10ef1" tabindex="0">
+<div class="jupyter-widgets jp-OutputArea-output" id="3fa5faf9-4221-4cd6-8e7e-0b88fa608255" tabindex="0">
 <script type="text/javascript">
-var element = document.getElementById('5ad00338-a63a-4ad6-97ad-f913d9e10ef1');
+var element = document.getElementById('3fa5faf9-4221-4cd6-8e7e-0b88fa608255');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "6b1d0e56528d474caf90cbd37f3854a7", "version_major": 2, "version_minor": 0}
@@ -8444,9 +8481,9 @@ var element = document.getElementById('5ad00338-a63a-4ad6-97ad-f913d9e10ef1');
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jupyter-widgets jp-OutputArea-output" id="906fb0c0-32f0-4efd-97c6-02084239b4f2" tabindex="0">
+<div class="jupyter-widgets jp-OutputArea-output" id="89d5bedb-0ae0-4854-9b98-141791b189f7" tabindex="0">
 <script type="text/javascript">
-var element = document.getElementById('906fb0c0-32f0-4efd-97c6-02084239b4f2');
+var element = document.getElementById('89d5bedb-0ae0-4854-9b98-141791b189f7');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "91df233c03a341deb7f8c4113bca0b72", "version_major": 2, "version_minor": 0}
@@ -8500,9 +8537,9 @@ var element = document.getElementById('906fb0c0-32f0-4efd-97c6-02084239b4f2');
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jupyter-widgets jp-OutputArea-output" id="6ba1d22a-ef8d-4103-b55d-b6e9b5e3891f" tabindex="0">
+<div class="jupyter-widgets jp-OutputArea-output" id="6d690070-ca9f-4c61-9797-970260c988a0" tabindex="0">
 <script type="text/javascript">
-var element = document.getElementById('6ba1d22a-ef8d-4103-b55d-b6e9b5e3891f');
+var element = document.getElementById('6d690070-ca9f-4c61-9797-970260c988a0');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "fab9449599894e0f868cf949f265757d", "version_major": 2, "version_minor": 0}
