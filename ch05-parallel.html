@@ -7482,7 +7482,15 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Model-adaptation-to-multi-GPU-training">Model adaptation to multi-GPU training<a class="anchor-link" href="#Model-adaptation-to-multi-GPU-training">¶</a></h3>
+<h2 id="Model-adaptation-to-multi-GPU-training">Model adaptation to multi-GPU training<a class="anchor-link" href="#Model-adaptation-to-multi-GPU-training">¶</a></h2><p>This chapter was inspired by <a href="https://zhuanlan.zhihu.com/p/675217571">https://zhuanlan.zhihu.com/p/675217571</a>, I strongly recommend you to read this post if you wish to dig into the mechanism of parallelism, especially how model and data are organized in multi-GPU system.</p>
+<h3 id="Training-in-multi-GPU(by-data-parallelism)">Training in multi-GPU(by data parallelism)<a class="anchor-link" href="#Training-in-multi-GPU(by-data-parallelism)">¶</a></h3><p>This following code aims at building a GPT to do English-Chinese translation, specifically it do the following things:</p>
+<ul>
+<li>prepare English-Chinese text data to feed to GPT model (including load and tokenize text data with customized tokenizer)</li>
+<li>define GPT model (the same we use in <em>ch04-gpt</em>)</li>
+<li>train the model with 2 GPUs</li>
+<li>generate text (doing translation) using the trained model</li>
+</ul>
+<h3 id="Prepare-text-data">Prepare text data<a class="anchor-link" href="#Prepare-text-data">¶</a></h3>
 </div>
 </div>
 </div>
