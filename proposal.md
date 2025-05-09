@@ -85,10 +85,32 @@ I lack a solid foundation—weekly course content feels overwhelmingly complex. 
 - Write a neat tutorial and put it online: https://xuguy.github.io/ (demo)
 - **Keep updating these notes in the future after course ends**, I will add more AI related contents in the following studies.
 
-## 8. References  
+<!-- ## 8. References  
 [1](@ref): Raschka S. (2024). *Build a Large Language Model (From Scratch)*  
 [2](@ref): Koki Saitoh. (2016). *Deep Learning from the Basics: Python and Deep Learning: Theory and Implementation*
 [3](@ref): 《深度学习入门2：自制框架》- 斋藤康毅；Koki Saitoh. (2020). *Deep Learning from Scratch 1* 
 [4](@ref): 《数度学习进阶：自然语言处理》- 斋藤康毅；Koki Saitoh. (2018). *Deep Learning from Scratch 2: Natural Language Processing* 
 [5](@ref): BabyGPT-Build_GPT_From_Scratch https://github.com/TatevKaren/BabyGPT-Build_GPT_From_Scratch
-[6](@ref): Bret Slatkin. (2016) Effective Python: 90 Specific Ways to Write Better Python(2nd Edition)
+[6](@ref): Bret Slatkin. (2016) Effective Python: 90 Specific Ways to Write Better Python(2nd Edition) -->
+
+### 8. References
+
+[1] Yakov Dan. *Using positional encoding in pytorch. 2023*. [Stack Overflow.](https://stackoverflow.com/questions/77444485/using-positional-encoding-in-pytorch) 
+
+[2] Benyou Wang et al. *CSC6052/5051/4100/DDA6307/MDS5110 Natural Language Processing. 2025.* [NLP Course Page.](https://nlp-course-cuhksz.github.io/)  
+
+[3] Sebastian Raschka. *Build A Large Language Model (From Scratch).* Manning, 2024. ISBN 978-1633437166. [Book code GitHub Repository.  ](https://www.manning.com/books/build-a-large-language-model-from-scratch). 
+
+[4] Sean Robertson. NLP From Scratch: Translation with a Sequence to Sequence Network and Attention. 2017. PyTorch Tutorial.  
+
+[5] Koki Saitoh. Deep Learning from the Basics: Python and Deep Learning: Theory and Implementation. O'Reilly Japan, Inc, 2016.  
+
+[6] Koki Saitoh. Deep Learning from Scratch 2: Natural Language Processing. O'Reilly Japan, Inc, 2018.  
+
+[7] Koki Saitoh. 深度学习入门2：自制框架. O'Reilly Japan, Inc, 2020.  
+
+[8] Bret Slatkin. Effective Python: 90 Specific Ways to Write Better Python (2nd Edition). Pearson Education, Inc, 2016.  
+
+[9] TatevKaren. Baby GPT - Simple Language Modeling Project. [GitHub Repository.](https://github.com/TatevKaren/BabyGPT-Build_GPT_From_Scratch) 
+
+[10] uphillroad (Guyuan Xu). DataParallel Adaptation. 2025. [Kaggle Notebook](https://www.kaggle.com/code/uphillroad/gpt2-dup-datapara)
